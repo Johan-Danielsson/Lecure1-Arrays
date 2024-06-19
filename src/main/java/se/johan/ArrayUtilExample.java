@@ -72,45 +72,50 @@ public class ArrayUtilExample {
 
 
     }
+
     // Combining arrays with Arrays.copyOf
-    public static void ex5(){
+    public static void ex5() {
         String[] names = {"Fredrik"};
         String[] moreNames = {"Erik", "Ulf", "Simon", "Kent"};
-        names = arrayConcat(names,moreNames); //[Fredrik, Erik, Ulf, Simon, Kent]
+        names = arrayConcat(names, moreNames); //[Fredrik, Erik, Ulf, Simon, Kent]
     }
-    public static String[] arrayConcat(String[] source, String[] elementsToAdd){
+
+    public static String[] arrayConcat(String[] source, String[] elementsToAdd) {
         String[] combined = Arrays.copyOf(source, source.length + elementsToAdd.length);
-        for(int i= source.length, j=0; i<combined.length; i++, j++){
+        for (int i = source.length, j = 0; i < combined.length; i++, j++) {
             combined[i] = elementsToAdd[j];
         }
         return combined;
     }
+
     //Arrays.copyOfRange()
-    public static void ex6(){
-        int[] numbers = {1,2,3,4,5,6,7,8,9};
+    public static void ex6() {
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         int startIndex = 2;             //Position we want to start from, INCLUSIVE
         int endIndex = numbers.length;  //Position we want to end at, EXCLUSIVE
 
         // range = {3,4,5,6,7,8,9}
-        int[] range = Arrays.copyOfRange( numbers, startIndex, endIndex);
+        int[] range = Arrays.copyOfRange(numbers, startIndex, endIndex);
 
     }
+
     //Arrays.fill()
-    public static void ex7(){
+    public static void ex7() {
         char[] letters = new char[10]; // Create 10 elements in the array
         Arrays.fill(letters, 'X'); // make them all X [X,X,X,X,X,X,X,X,X,X]
         System.out.println(letters);
     }
+
     //Arrays.toString()
-    public static void ex8(){
+    public static void ex8() {
         //If yo want to turn an array into a String you can use the Arrays.toString() method
         // If you don't use it you will only get the memory address of the array back.
         String[] javaPrinciples = {
                 "1. DRY - Don't Repeat Yourself",
                 "2. KISS - Keep It Simple Stupid"
         };
-            //Ljava.lang.String;@12db9742
+        //Ljava.lang.String;@12db9742
         System.out.println(javaPrinciples);
 
         // ["1. DRY - Don't Repeat Yourself", "2. KISS - Keep It Simple Stupid"]
